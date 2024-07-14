@@ -1,0 +1,1 @@
+alter table topicos add fecha_de_creacion datetime;
