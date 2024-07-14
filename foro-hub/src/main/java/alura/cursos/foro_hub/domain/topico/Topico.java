@@ -26,14 +26,32 @@ public class Topico {
     private Boolean estado;
 
 
-    public Topico(DatosRegistroTopico datosTopico){
-        this.titulo = datosTopico.titulo();
-        this.mensaje = datosTopico.mensaje();
-        this.autor = datosTopico.autor();
-        this.curso = datosTopico.curso();
+    public Topico(DatosRegistroTopico datosRegistroTopico){
+        this.titulo = datosRegistroTopico.titulo();
+        this.mensaje = datosRegistroTopico.mensaje();
+        this.autor = datosRegistroTopico.autor();
+        this.curso = datosRegistroTopico.curso();
         this.estado = true;
         this.fechaDeCreacion = LocalDateTime.now();
     }
 
 
+    public void actualizaTopico(DatosActualizaTopico datosActualizaTopico){
+        if (datosActualizaTopico.titulo() != null){
+            this.titulo = datosActualizaTopico.titulo();
+        }
+        if (datosActualizaTopico.mensaje() != null){
+            this.mensaje = datosActualizaTopico.mensaje();
+        }
+        if (datosActualizaTopico.autor() != null){
+            this.autor = datosActualizaTopico.autor();
+        }
+        if (datosActualizaTopico.curso() != null){
+            this.curso = datosActualizaTopico.curso();
+        }
+    }
+
+    public void eliminarTopico(){
+        this.estado = false;
+    }
 }
